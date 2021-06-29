@@ -6,8 +6,20 @@
 </style>
 </head>
 <body>
-<p id="q"></p><button id="o1"></button><button id="o2"></button><button id="o3"></button><button id="o4"></button>
+<div id="timer"></div><p id="q"></p><button id="o1" class="qb"></button><button class="qb" id="o2"></button><button id="o3" class="qb"></button><button id="o4" class="qb"></button>
 <script>
+function set(q , o1 , o2 , o3 , o4 , cor ) {
+document.getElementById("q").innerHTML = q ;
+document.getElementById("o1").innerHTML = o1 ;
+document.getElementById("o2").innerHTML = o2 ;
+document.getElementById("o3").innerHTML = o3 ;
+document.getElementById("o4").innerHTML = o4 ;
+document.getElementsByClassName("qb")[cor].onclick = "check()" 
+}
+set("who","hh", "BBB" , "bb", "jj", 1) ;
+function check() {
+alert("bh")
+}
 </script>
 </body>
 </html>
