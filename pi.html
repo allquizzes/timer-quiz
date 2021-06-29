@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<script src="https://sdk.minepi.com/pi-sdk.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+</style>
+</head>
+<body>
+<script>
+// Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
+const scopes = ['payments'];
+function onIncompletePaymentFound(payment) { /* ... */ }; // Read more about this in the SDK reference
+
+Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+  alert(`Hi there! You're ready to make payments!`);
+}).catch(function(error) {
+  console.error(error);
+});
+
+const payment = Pi.createPayment({
+  // Amount of π to be paid:
+  amount: 3.14,
+  // An explanation of the payment - will be shown to the user:
+  memo: "...", // e.g: "Digital kitten #1234",
+  // An arbitrary developer-provided metadata object - for your own usage:
+  metadata: { /* ... */ }, // e.g: { kittenId: 1234 }
+}, {
+  // Callbacks you need to implement - read more about those in the detailed docs linked below:
+  onReadyForServerApproval: function(paymentId) { alert ("yes") },
+  onReadyForServerCompletion: function(paymentId, txid) { /* ... */ },
+  onCancel: function(paymentId) { /* ... */ },
+  onError: function(error, payment) { /* ... */ },
+});
+
+
+</body>
+</html>
