@@ -14,8 +14,7 @@ document.getElementById("o1").innerHTML = o1 ;
 document.getElementById("o2").innerHTML = o2 ;
 document.getElementById("o3").innerHTML = o3 ;
 document.getElementById("o4").innerHTML = o4 ;
-const x = document.getElementsByClassName("qb");
-x[0].onclick = "eck()" ;
+document.getElementsByClassName("qb")[cor].setAttribute("onclick", "eck()");
 }
 function eck() {
 alert("bh")
