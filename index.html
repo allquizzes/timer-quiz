@@ -8,18 +8,19 @@
 <body>
 <div id="timer"></div><p id="q"></p><button id="o1" class="qb"></button><button class="qb" id="o2"></button><button id="o3" class="qb"></button><button id="o4" class="qb"></button>
 <script>
-function set(q , o1 , o2 , o3 , o4 , cor ) {
+function set(q , o1 , o2 , o3 , o4 , cor , num) {
 document.getElementById("q").innerHTML = q ;
 document.getElementById("o1").innerHTML = o1 ;
 document.getElementById("o2").innerHTML = o2 ;
 document.getElementById("o3").innerHTML = o3 ;
 document.getElementById("o4").innerHTML = o4 ;
-document.getElementsByClassName("qb")[cor].setAttribute("onclick", "eck()");
+document.getElementsByClassName("qb")[cor].setAttribute("onclick", "check()");
+var lev = num ;
 }
-function eck() {
-alert("bh")
+function check() {
+alert
 }
-set("who","hh", "BBB" , "bb", "jj", 1) ;
+set("who","hh", "BBB" , "bb", "jj", 1 , 1) ;
 </script>
 </body>
 </html>
