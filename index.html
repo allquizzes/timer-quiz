@@ -61,13 +61,13 @@ font-family: Helvetica ;
 <body>
 <p id="timer"></p>
 <p id="question"></p>
-<button data-correct class="option" onclick="press(this)" ></button>
+<button data-correct = "true" class="option" onclick="press(this)" ></button>
 <button class="option" onclick="press(this)" ></button>
 <button class="option" onclick="press(this)" ></button>
 <button class="option" onclick="press(this)" ></button>
 <script>
 function press(elem) {
-if (elem.dataset.correct == true) {
+if (elem.dataset.correct == "true" ) {
 elem.style.backgroundColor = "lightgreen" ;
  } else {
 elem.style.border = "5px solid red"
