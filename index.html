@@ -67,8 +67,10 @@ font-family: Helvetica ;
 <button class="option" onclick="press(this)" ></button>
 <script>
 function press(elem) {
-if (elem.dataset.correct = true) {
-alert("v or")
+if (elem.dataset.correct == true) {
+elem.style.backgroundColor = "lightgreen" ;
+ } else {
+elem.style.border = "5px solid red"
  }
 }
 const FULL_DASH_ARRAY = 283;
