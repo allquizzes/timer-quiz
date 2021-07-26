@@ -60,7 +60,17 @@ font-family: Helvetica ;
 </head>
 <body>
 <p id="timer"></p>
+<p id="question"></p>
+<button data-correct class="option" onclick="press(this)" ></button>
+<button class="option" onclick="press(this)" ></button>
+<button class="option" onclick="press(this)" ></button>
+<button class="option" onclick="press(this)" ></button>
 <script>
+function press(elem) {
+if (elem.dataset.correct = true) {
+alert("v or")
+ }
+}
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 120;
 const ALERT_THRESHOLD = 60;
