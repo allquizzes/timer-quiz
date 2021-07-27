@@ -79,7 +79,7 @@ const xhttp = new XMLHttpRequest();
 
 // Define a callback function
 xhttp.onload = function() {
-var da = JSON.parse(this.responseText) ;
+var da = this.responseText ;
     document.getElementById("question").innerHTML = da[1] ;
 }
 
