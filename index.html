@@ -75,6 +75,18 @@ for(i = 0 ; i < option.length ; i++) {
 option[i].disabled = true ;
  }
 }
+const xhttp = new XMLHttpRequest();
+
+// Define a callback function
+xhttp.onload = function() {
+var da = json.parse(this.responseText) ;
+    document.getElementById("question").innerHTML = da[0] ;
+}
+
+// Send a request
+xhttp.open("GET", "questions.json");
+xhttp.send();
+
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 120;
 const ALERT_THRESHOLD = 60;
