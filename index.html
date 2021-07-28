@@ -75,17 +75,6 @@ for(i = 0 ; i < option.length ; i++) {
 option[i].disabled = true ;
  }
 }
-const xhttp = new XMLHttpRequest();
-
-// Define a callback function
-xhttp.onload = function() {
-var da = this.responseText ;
-    document.getElementById("question").innerHTML = da[1] ;
-}
-
-// Send a request
-xhttp.open("GET", "questions.json");
-xhttp.send();
 
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 120;
@@ -105,7 +94,7 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 300;
+var time_limit = 300;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
