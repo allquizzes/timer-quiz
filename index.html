@@ -83,6 +83,19 @@ if (timeLeft === 0) {
   }, 1000);
  } else {
 elem.style.backgroundColor = "red"
+TIME_LIMIT -= 5 ;
+timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(
+      timeLeft
+    );
+    setCircleDasharray();
+    setRemainingPathColor(timeLeft);
+if (timeLeft === 0) {
+      onTimesUp();
+    }
+  }, 1000);
  }
 for(i = 0 ; i < option.length ; i++) {
 option[i].disabled = true ;
@@ -107,7 +120,7 @@ const COLOR_CODES = {
   }
 };
 
-var TIME_LIMIT = 300;
+var TIME_LIMIT = 60;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -139,10 +152,6 @@ document.getElementById("timer").innerHTML = `
 
 function onTimesUp() {
   clearInterval(timerInterval);
-  let i = 0 ;
- while (i < 41) {
- document.querySelectorAll("button")[i].disabled = true ;
- i++ ; 
 }
  document.getElementById("chc").disabled = false;
  document.getElementById("sharethis").disabled = false;
@@ -151,10 +160,6 @@ function onTimesUp() {
 function startGame() {
  document.getElementById(
  "startquiz").style.display = "none";
- document.getElementsByClassName(
-  "next")[0].style.display = "inline";
- document.getElementsByClassName(
-  "prev")[0].style.display = "inline";
 document.getElementById(
  "Que-1").style.display = "block";
   timerInterval = setInterval(() => {
