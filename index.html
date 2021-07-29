@@ -68,6 +68,7 @@ var option = document.getElementsByClassName("option") ;
 function press(elem) {
 if (elem.dataset.correct == "true" ) {
 elem.style.backgroundColor = "lightgreen" ;
+TIME_LIMIT += 10 ;
  } else {
 elem.style.backgroundColor = "red"
  }
@@ -94,7 +95,7 @@ const COLOR_CODES = {
   }
 };
 
-var time_limit = 300;
+var TIME_LIMIT = 300;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -203,6 +204,7 @@ function setCircleDasharray() {
     .setAttribute("stroke-dasharray", circleDasharray);
 }
 </script>
+<script src="questions.js"></script>
 </body>
 </html>
 
