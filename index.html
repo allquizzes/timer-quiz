@@ -65,6 +65,8 @@ font-family: Helvetica ;
 <button class="option" onclick="press(this)" ></button>
 <script>
 var option = document.getElementsByClassName("option") ;
+var que = qu[0] ;
+option[0].innerHTML = que[1] ;
 function press(elem) {
 if (elem.dataset.correct == "true" ) {
 elem.style.backgroundColor = "lightgreen" ;
@@ -103,8 +105,8 @@ option[i].disabled = true ;
 }
 
 const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 120;
-const ALERT_THRESHOLD = 60;
+const WARNING_THRESHOLD = 30;
+const ALERT_THRESHOLD = 15 ;
 
 const COLOR_CODES = {
   info: {
