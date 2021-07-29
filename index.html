@@ -68,7 +68,7 @@ var option = document.getElementsByClassName("option") ;
 function press(elem) {
 if (elem.dataset.correct == "true" ) {
 elem.style.backgroundColor = "lightgreen" ;
-TIME_LIMIT += 10 ;
+TIME_LIMIT += 11 ;
 timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
@@ -83,7 +83,7 @@ if (timeLeft === 0) {
   }, 1000);
  } else {
 elem.style.backgroundColor = "red" ;
-TIME_LIMIT -= 5 ;
+TIME_LIMIT -= 4 ;
 timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
