@@ -74,8 +74,10 @@ option[question[3]].dataset.correct = "true" ;
 function press(elem) {
 if (elem.dataset.correct == "true" ) {
 elem.style.backgroundColor = "lightgreen" ;
+clearInterval(timerInterval);
 TIME_LIMIT += 11 ;
 timeLeft += 11 ;
+timePassed = timePassed -= 11;
 timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
@@ -90,8 +92,10 @@ if (timeLeft === 0) {
   }, 1000);
  } else {
 elem.style.backgroundColor = "red" ;
+clearInterval(timerInterval);
 TIME_LIMIT -= 4 ;
 timeLeft -= 4 ;
+timePassed = timePassed += 4;
 timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
