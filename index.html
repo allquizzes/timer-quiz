@@ -103,10 +103,6 @@ if (timeLeft === 0) {
     }
   }, 1000);
  }
-for(i = 0 ; i < option.length ; i++) {
-option[i].disabled = true ;
-document.getElementById("next").style.display = "block";
- }
 }
 
 const FULL_DASH_ARRAY = 283;
@@ -159,16 +155,10 @@ document.getElementById("timer").innerHTML = `
 
 function onTimesUp() {
   clearInterval(timerInterval);
- document.getElementById("chc").disabled = false;
- document.getElementById("sharethis").disabled = false;
  }
 
 function startGame() {
- document.getElementById(
- "startquiz").style.display = "none";
-document.getElementById(
- "Que-1").style.display = "block";
-  timerInterval = setInterval(() => {
+timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
     document.getElementById("base-timer-label").innerHTML = formatTime(
