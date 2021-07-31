@@ -73,6 +73,9 @@ document.getElementById("question").innerHTML = question[0]
 option[0].innerHTML = question[1] ;
 option[1].innerHTML = question[2] ;
 option[question[3]].dataset.correct = "true" ;
+ for (i = 0 ; i < option.length ; i++) {
+option[i].disabled = false ;
+ }
 }
 function press(elem) {
 if (elem.dataset.correct == "true" ) {
@@ -107,9 +110,6 @@ if (timeLeft === 0) {
       onTimesUp();
     }
   }, 1000);
- }
- for(i = 0 ; i < option.length ; i++) {
-option[i].disabled = true ;
  }
 }
 
