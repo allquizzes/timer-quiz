@@ -75,6 +75,8 @@ option[1].innerHTML = question[2] ;
 option[question[3]].dataset.correct = "true" ;
  for (i = 0 ; i < option.length ; i++) {
 option[i].disabled = false ;
+option[i].dataset.correct = "false" ;
+option[i].style.backgroundColor = "white" ;
  }
 }
 function press(elem) {
