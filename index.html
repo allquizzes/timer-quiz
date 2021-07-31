@@ -63,15 +63,17 @@ font-family: Helvetica ;
 <p id="question"></p>
 <button class="option" onclick="press(this)" ></button>
 <button class="option" onclick="press(this)" ></button>
-<script src="questions.js"></script>
+<button onclick="change()">Change</button><script src="questions.js"></script>
 <script>
-var num = getnum(0 , 1)
 var option = document.getElementsByClassName("option") ;
-var question = qu[num] ;
+var question ;
+function change() {
+question = qu[getnum(0 , 1)] ;
 document.getElementById("question").innerHTML = question[0]
 option[0].innerHTML = question[1] ;
 option[1].innerHTML = question[2] ;
 option[question[3]].dataset.correct = "true" ;
+}
 function press(elem) {
 if (elem.dataset.correct == "true" ) {
 elem.style.backgroundColor = "lightgreen" ;
@@ -105,6 +107,9 @@ if (timeLeft === 0) {
       onTimesUp();
     }
   }, 1000);
+ }
+ for(i = 0 ; i < option.length ; i++) {
+option[i].disabled = true ;
  }
 }
 
