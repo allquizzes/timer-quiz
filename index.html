@@ -65,8 +65,9 @@ font-family: Helvetica ;
 <button class="option" onclick="press(this)" ></button>
 <script src="questions.js"></script>
 <script>
+var num = getnum(0 , 1)
 var option = document.getElementsByClassName("option") ;
-var question = qu[0] ;
+var question = qu[num] ;
 document.getElementById("question").innerHTML = question[0]
 option[0].innerHTML = question[1] ;
 option[1].innerHTML = question[2] ;
@@ -217,6 +218,9 @@ function setCircleDasharray() {
   document
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
+}
+function getnum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 </script>
 </body>
