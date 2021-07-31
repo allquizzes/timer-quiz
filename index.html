@@ -68,16 +68,16 @@ font-family: Helvetica ;
 var option = document.getElementsByClassName("option") ;
 var question ;
 function change() {
-question = qu[getnum(0 , 1)] ;
-document.getElementById("question").innerHTML = question[0]
-option[0].innerHTML = question[1] ;
-option[1].innerHTML = question[2] ;
-option[question[3]].dataset.correct = "true" ;
  for (i = 0 ; i < option.length ; i++) {
 option[i].disabled = false ;
 option[i].dataset.correct = "false" ;
 option[i].style.backgroundColor = "white" ;
  }
+question = qu[getnum(0 , 1)] ;
+document.getElementById("question").innerHTML = question[0]
+option[0].innerHTML = question[1] ;
+option[1].innerHTML = question[2] ;
+option[question[3]].dataset.correct = "true" ;
 }
 function press(elem) {
 if (elem.dataset.correct == "true" ) {
