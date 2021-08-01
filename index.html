@@ -72,16 +72,7 @@ font-family: Helvetica ;
 <button onclick="addtime(this)">⏳</button></div>
 <script src="questions.js"></script>
 <script>
-var option = document.getElementsByClassName("option") ;
-var question ;
-var next = document.getElementById("next") ;
-function change() {
- for (i = 0 ; i < option.length ; i++) {
-option[i].disabled = false ;
-option[i].dataset.correct = "false" ;
-option[i].style.backgroundColor = "white" ;
- }
-  var i = 0
+var i = 0
     , j = 0
     , temp = null ;
 
@@ -91,7 +82,18 @@ option[i].style.backgroundColor = "white" ;
     qu[i] = qu[j]
     qu[j] = temp
 }
-question = qu[0] ;
+var option = document.getElementsByClassName("option") ;
+var question ;
+var num = 0 ;
+var next = document.getElementById("next") ;
+function change() {
+ for (i = 0 ; i < option.length ; i++) {
+option[i].disabled = false ;
+option[i].dataset.correct = "false" ;
+option[i].style.backgroundColor = "white" ;
+ }
+num++ ;
+question = qu[num] ;
 document.getElementById("question").innerHTML = question[0]
 option[0].innerHTML = question[1] ;
 option[1].innerHTML = question[2] ;
