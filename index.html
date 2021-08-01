@@ -3,6 +3,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+#main {
+display: none ;
+}
 .base-timer {
   position: relative;
   width: 150px;
@@ -63,7 +66,7 @@ font-family: Helvetica ;
 <p id="question"></p>
 <button class="option" onclick="press(this)" ></button>
 <button class="option" onclick="press(this)" ></button>
-<button onclick="change(this)" id="next" >Change</button>
+<button onclick="change(this)" id="next" >Next</button>
 <button onclick="freeze(this)">❄️</button>
 <button onclick="change() ; this.disabled = true">⏩</button>
 <button onclick="addtime(this)">⏳</button></div>
@@ -192,6 +195,7 @@ timerInterval = setInterval(() => {
     }
   }, 1000);
 document.getElementById("startbuttton").style.display = "none";
+change() ;
 document.getElementById("main").style.display = "block";
 }
 
