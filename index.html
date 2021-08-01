@@ -95,7 +95,7 @@ option[i].dataset.correct = "false" ;
 option[i].style.backgroundColor = "white" ;
  }
 num++ ;
-if (num == qu.length) { shuffle() }
+if (num >= qu.length) { shuffle() }
 question = qu[num] ;
 document.getElementById("question").innerHTML = question[0]
 option[0].innerHTML = question[1] ;
