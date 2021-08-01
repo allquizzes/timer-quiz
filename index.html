@@ -81,12 +81,23 @@ option[i].disabled = false ;
 option[i].dataset.correct = "false" ;
 option[i].style.backgroundColor = "white" ;
  }
-question = qu[getnum(0 , qu.length)] ;
+  var i = 0
+    , j = 0
+    , temp = null ;
+
+  for (i = qu.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1))
+    temp = qu[i]
+    qu[i] = qu[j]
+    qu[j] = temp
+}
+question = qu[0] ;
 document.getElementById("question").innerHTML = question[0]
 option[0].innerHTML = question[1] ;
 option[1].innerHTML = question[2] ;
 option[question[3]].dataset.correct = "true" ;
 next.disabled = true ;
+
 }
 function press(elem) {
 if (elem.dataset.correct == "true" ) {
