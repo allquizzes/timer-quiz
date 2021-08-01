@@ -65,7 +65,7 @@ font-family: Helvetica ;
 <button class="option" onclick="press(this)" ></button>
 <button onclick="change(this)" id="next" >Change</button>
 <button onclick="freeze(this)">❄️</button>
-<button onclick="skip(this)">⏩</button>
+<button onclick="change() ; this.disabled = true">⏩</button>
 <button onclick="addtime(this)">⏳</button>
 <script src="questions.js"></script>
 <script>
@@ -242,6 +242,23 @@ function getnum(min, max) {
 function freeze(elem) {
 elem.disabled = true ;
 clearInterval(timerInterval);
+}
+function addtime(elem) {
+elem.disabled = true ;
+clearInterval(timerInterval);
+TIME_LIMIT += 11 ;
+timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(
+      timeLeft
+    );
+    setCircleDasharray();
+    setRemainingPathColor(timeLeft);
+if (timeLeft === 0) {
+      onTimesUp();
+    }
+  }, 1000);
 }
 </script>
 </body>
