@@ -83,7 +83,7 @@ var i = 0
     qu[i] = qu[j]
     qu[j] = temp
  }
-alert(qu)
+alert("hello")
 }
 var option = document.getElementsByClassName("option") ;
 var question ;
@@ -96,7 +96,7 @@ option[i].dataset.correct = "false" ;
 option[i].style.backgroundColor = "white" ;
  }
 num++ ;
-if (num >= qu.length) { shuffle() }
+if (num >= qu.length) { shuffle() ; num = 0 }
 question = qu[num] ;
 document.getElementById("question").innerHTML = question[0]
 option[0].innerHTML = question[1] ;
