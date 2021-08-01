@@ -59,14 +59,14 @@ font-family: Helvetica ;
 </style>
 </head>
 <body>
-<p id="timer"></p>
+<p id="timer"></p><button id="startbuttton" onclick="start()">Start</button><div id="main">
 <p id="question"></p>
 <button class="option" onclick="press(this)" ></button>
 <button class="option" onclick="press(this)" ></button>
 <button onclick="change(this)" id="next" >Change</button>
 <button onclick="freeze(this)">❄️</button>
 <button onclick="change() ; this.disabled = true">⏩</button>
-<button onclick="addtime(this)">⏳</button>
+<button onclick="addtime(this)">⏳</button></div>
 <script src="questions.js"></script>
 <script>
 var option = document.getElementsByClassName("option") ;
@@ -177,7 +177,7 @@ function onTimesUp() {
   clearInterval(timerInterval);
  }
 
-function startGame() {
+function start() {
 timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
@@ -191,6 +191,8 @@ timerInterval = setInterval(() => {
       onTimesUp();
     }
   }, 1000);
+document.getElementById("startbuttton").style.display = "none";
+document.getElementById("main").style.display = "block";
 }
 
 function formatTime(time) {
