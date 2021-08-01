@@ -61,7 +61,7 @@ font-family: Helvetica ;
 }
 </style>
 </head>
-<body>
+<body onload="shuffle()" >
 <p id="timer"></p><button id="startbuttton" onclick="start()">Start</button><div id="main">
 <p id="question"></p>
 <button class="option" onclick="press(this)" ></button>
@@ -72,6 +72,7 @@ font-family: Helvetica ;
 <button onclick="addtime(this)">⏳</button></div>
 <script src="questions.js"></script>
 <script>
+function shuffle() {
 var i = 0
     , j = 0
     , temp = null ;
@@ -81,6 +82,7 @@ var i = 0
     temp = qu[i]
     qu[i] = qu[j]
     qu[j] = temp
+ }
 }
 var option = document.getElementsByClassName("option") ;
 var question ;
@@ -93,6 +95,7 @@ option[i].dataset.correct = "false" ;
 option[i].style.backgroundColor = "white" ;
  }
 num++ ;
+if (num == qu.length) { shuffle() }
 question = qu[num] ;
 document.getElementById("question").innerHTML = question[0]
 option[0].innerHTML = question[1] ;
