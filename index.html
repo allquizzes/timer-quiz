@@ -63,10 +63,15 @@ font-family: Helvetica ;
 <p id="question"></p>
 <button class="option" onclick="press(this)" ></button>
 <button class="option" onclick="press(this)" ></button>
-<button onclick="change()">Change</button><script src="questions.js"></script>
+<button onclick="change(this)" id="next" >Change</button>
+<button onclick="freeze(this)">❄️</button>
+<button onclick="skip(this)">⏩</button>
+<button onclick="addtime(this)">⏳</button>
+<script src="questions.js"></script>
 <script>
 var option = document.getElementsByClassName("option") ;
 var question ;
+var next = document.getElementById("next") ;
 function change() {
  for (i = 0 ; i < option.length ; i++) {
 option[i].disabled = false ;
@@ -78,6 +83,7 @@ document.getElementById("question").innerHTML = question[0]
 option[0].innerHTML = question[1] ;
 option[1].innerHTML = question[2] ;
 option[question[3]].dataset.correct = "true" ;
+next.disabled = true ;
 }
 function press(elem) {
 if (elem.dataset.correct == "true" ) {
@@ -116,6 +122,7 @@ if (timeLeft === 0) {
 for (i = 0 ; i < option.length ; i++) {
 option[i].disabled = true ;
  }
+next.disabled = false ;
 }
 
 const FULL_DASH_ARRAY = 283;
@@ -231,6 +238,10 @@ function setCircleDasharray() {
 }
 function getnum(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+function freeze(elem) {
+elem.disabled = true ;
+clearInterval(timerInterval);
 }
 </script>
 </body>
