@@ -65,8 +65,8 @@ font-family: Helvetica ;
 .option {
 height: 10vh ;
 width : 45vw ;
-background: #4fb9ff ;
-font-size: 10vh ;
+background-color : #4fb9ff ;
+font-size: 32px ;
 }
 #question {
 font-family: 'VT323', monospace;
@@ -104,7 +104,7 @@ function change() {
  for (i = 0 ; i < option.length ; i++) {
 option[i].disabled = false ;
 option[i].dataset.correct = "false" ;
-option[i].style.backgroundColor = "white" ;
+option[i].style.backgroundColor = "#4fb9ff" ;
  }
 num++ ;
 if (num >= qu.length) { shuffle() ; num = 0 }
