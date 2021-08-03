@@ -85,6 +85,9 @@ height: 8vh ;
 width : 95vw ;
 font-size: 20px ;
 }
+.help {
+flex-grow : 1
+}
 </style>
 </head>
 <body onload="shuffle()" >
@@ -92,7 +95,7 @@ font-size: 20px ;
 <p id="question"></p><div class="ocon">
 <button class="option" onclick="press(this)" style="margin-right: 5vw"  ></button>
 <button class="option" onclick="press(this)" ></button></div><br><br>
-<button onclick="change(this)" id="next" >Next</button> <br><br>
+<button onclick="change(this)" id="next" >Next</button> <br><br><div class"help">
 <button onclick="freeze(this)">❄️</button>
 <button onclick="change() ; this.disabled = true">⏩</button>
 <button onclick="addtime(this)">⏳</button></div>
