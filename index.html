@@ -64,8 +64,8 @@ font-family: Helvetica ;
 }
 .option {
 font-family: 'VT323', monospace;
-height: 8vh ;
-width : 75vw ;
+height: 10vh ;
+width : 45vw ;
 font-size: 24px ;
 }
 .ocon {
@@ -80,14 +80,20 @@ body {
 background: black ;
 color: white ;
 }
+#next {
+height: 8vh ;
+width : 90vw ;
+font-size: 20px ;
+margin: 0 auto ;
+}
 </style>
 </head>
 <body onload="shuffle()" >
 <p id="timer"></p><button id="startbuttton" onclick="start()">Start</button><div id="main">
 <p id="question"></p><div class="ocon">
 <button class="option" onclick="press(this)" style="margin-right: 5vw"  ></button>
-<button class="option" onclick="press(this)" ></button><br><br>
-<button onclick="change(this)" id="next" >Next</button> </div><br><br>
+<button class="option" onclick="press(this)" ></button></div><br><br>
+<button onclick="change(this)" id="next" >Next</button> <br><br>
 <button onclick="freeze(this)">❄️</button>
 <button onclick="change() ; this.disabled = true">⏩</button>
 <button onclick="addtime(this)">⏳</button></div>
