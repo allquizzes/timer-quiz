@@ -63,10 +63,11 @@ font-family: Helvetica ;
   font-size: 48px;
 }
 .option {
-height: 10vh ;
-width : 45vw ;
-font-size: 24px ;
 font-family: 'VT323', monospace;
+}
+.ocon {
+display: flex ;
+justify-content : center ;
 }
 #question {
 font-family: 'VT323', monospace;
@@ -80,9 +81,9 @@ color: white ;
 </head>
 <body onload="shuffle()" >
 <p id="timer"></p><button id="startbuttton" onclick="start()">Start</button><div id="main">
-<p id="question"></p>
+<p id="question"></p><div class="ocon">
 <button class="option" onclick="press(this)" style="margin-right: 5vw"  ></button>
-<button class="option" onclick="press(this)" ></button><br><br>
+<button class="option" onclick="press(this)" ></button></div><br><br>
 <button onclick="change(this)" id="next" >Next</button> <br><br>
 <button onclick="freeze(this)">❄️</button>
 <button onclick="change() ; this.disabled = true">⏩</button>
