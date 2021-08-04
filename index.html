@@ -154,7 +154,7 @@ if (timeLeft <= 0) {
  } else {
 elem.style.backgroundColor = "red" ;
 clearInterval(timerInterval);
-TIME_LIMIT -= 4 ;
+TIME_LIMIT -= 9 ;
 timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
