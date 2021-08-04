@@ -94,6 +94,14 @@ display: flex ;
 </style>
 </head>
 <body onload="shuffle()" >
+  <dark-mode-toggle
+      id="dark-mode-toggle-1"
+      legend="Theme Switcher"
+      appearance="switch"
+      dark="Dark"
+      light="Light"
+      remember="Remember this"
+  ></dark-mode-toggle>
 <p id="timer"></p><button id="startbuttton" onclick="start()">Start</button><div id="main">
 <p id="question"></p><div class="ocon">
 <button class="option" onclick="press(this)"  ></button>
